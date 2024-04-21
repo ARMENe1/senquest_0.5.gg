@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>daily_wheelspin</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="A only-for-fun copy of 'senquest.gg' website. ⚠ There are no rewards at all considering it's only for fun!">
+    <meta name="keywords" content="brawlhalla, senquest.gg">
+    <link rel="shortcut icon" type="image/png" href="image/favicon.ico" > </link>
+    <link href="../main.css" rel="stylesheet">
+
+    <style>
+        #wheel {
+            width: 500px;
+            height: 500px;
+            background-color: rgb(245, 245, 8);
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+            left: 35%;
+            top : 8%;
+            transition: transform 6s ease-in-out;
+        }
+
+        #wheel img {
+            width: 100%;
+            height: 100%;
+        }
+
+        #timer {
+            font-size: 32px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li class="text daily-desc"><strong>Daily Wheelspin</strong>
+            <p class="text daily-desc">Try your luck with our daily wheelspin to earn extra tokens!</p>
+
+            <button id="spinButton" onclick="spinWheel()">Spin Wheel</button>
+            <div id="wheel">
+                <img src="image/wheelspin_coin.jpg.png" alt="Wheel">
+            </div>
+            <div id="timer"></div> <!-- Element pour afficher le timer -->
+        </li>
+    </ul>
+
+    <p class="return_homepage">Click here to go back to the home page <br>
+    <a href="homepage.html" target="_blank">senquest_0.5.gg</a></p>
+
+    <script>
+        function getCurrentTime() {
+            return new Date().getTime();
+        }
+
+        var lastSpinTime = 0;
+
+        function spinWheel() {
+            var currentTime = getCurrentTime();
+
+            if (currentTime - lastSpinTime >= 24 * 60 * 60 * 1000) {
+                var spinButton = document.getElementById("spinButton");
+                spinButton.disabled = true;
+
+                var wheel = document.getElementById("wheel");
+                var randomRotations = Math.floor(Math.random() * 3) + 3;
+                var randomDegree = 360 * randomRotations + Math.floor(Math.random() * 360);
+                wheel.style.transition = "transform 6s ease-in-out";
+                wheel.style.transform = "rotate(" + randomDegree + "deg)";
+
+                setTimeout(function() {
+                    spinButton.disabled = false;
+                    lastSpinTime = currentTime;
+                }, 6000);
+            } else {
+                alert("You need to wait 24 hours before spinning again.");
+            }
+        }
+
+        // Fonction pour afficher le timer
+        function updateTimer() {
+            var currentTime = getCurrentTime();
+            var timeDifference = (lastSpinTime + 24 * 60 * 60 * 1000) - currentTime; // Calcul du temps restant en millisecondes
+            var hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)); // Calcul des heures restantes
+            var minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60)); // Calcul des minutes restantes
+            var seconds = Math.floor((timeDifference % (1000 * 60)) / 1000); // Calcul des secondes restantes
+
+            // Formatage du temps restant
+            var timerText = "Time until next spin: ";
+            timerText += (hours < 10 ? "0" : "") + hours + ":";
+            timerText += (minutes < 10 ? "0" : "") + minutes + ":";
+            timerText += (seconds < 10 ? "0" : "") + seconds;
+
+            document.getElementById("timer").textContent = timerText;
+        }
+
+        // Mettre à jour le timer chaque seconde
+        setInterval(updateTimer, 1000);
+
+        // Initialiser le timer au chargement de la page
+        updateTimer();
+    </script>
+</body>
+
+</html>

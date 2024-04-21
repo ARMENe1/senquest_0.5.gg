@@ -1,0 +1,36 @@
+body {
+
+    background-image: url('background_image2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    font-family: 'Gill Sans', sans-serif;
+}
+
+.regular_coin_text,.premium_coin_text {
+
+    font-size: 50px;
+    font-family: Stencil Std, fantasy;
+    color: red;
+    position: absolute;
+    left:42%;
+    top: -4%;
+
+}
+
+
+.wheelspin_button {
+
+    font-size: 25px;
+    background-color: lightblue;
+    position: fixed;
+    left: 20%;
+    top: 30%;
+}
+
+.return_homepage {
+    position: absolute;
+    bottom: 2%;
+}

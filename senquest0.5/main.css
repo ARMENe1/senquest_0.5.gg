@@ -1,0 +1,123 @@
+.external_link {
+
+    color: #b32d2e;
+    background-color: #242424;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    padding: 3px;
+    text-align: center;
+    text-decoration: none;
+    cursor: default;
+}
+
+.title_big {
+    color:red;
+    font-size: 70px;
+    font-family: Stencil Std, fantasy;
+}
+
+.coin_counter {
+    position: fixed;
+    top: 60px;
+    right:25px; 
+}
+
+.link_wheelspin {
+
+    font-size: 20px;
+    color: black;
+    background-color: lightblue;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    padding: 3px;
+    text-align: center;
+    text-decoration: none;
+    cursor: default;
+}
+
+.watch_earn{
+    font-size: 30px;
+}
+
+body {
+    font-family: 'Gill Sans',sans-serif;
+    background-image: url('background_image.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+}
+
+a[href*="store"] {
+    font-size: 20px;
+    color: black;
+    background-color: lightblue;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    padding: 3px;
+    text-align: center;
+    text-decoration: none;
+    cursor: default;
+    
+}
+
+a[href^="sign_up.html"] {
+
+    font-size: 25px;
+    color: beige;
+    background-color: blueviolet;
+    position: fixed;
+    top: 20px;
+    right: 20px; 
+    border: 1px solid #8f8f9d;
+    border-radius: 5px;
+    padding: 3px;
+    text-align: center;
+    text-decoration: none;
+    cursor: default;
+}
+
+.daily-desc {
+
+    font-size: 20px;
+}
+
+
+
+.return_homepage {
+    position: absolute;
+    bottom: 2%;
+}
+
+#spinButton {
+
+    font-size: 25px;
+    background-color: lightblue;
+    position: fixed;
+    left: 20%;
+    top: 30%;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.crates {
+    display: flex;
+}
+
+.crate {
+    margin: 0 10px;
+    text-align: center;
+}
+
+.text_heaven {
+    font-size: 50px;
+    font-family: Stencil Std, fantasy;
+
+}
